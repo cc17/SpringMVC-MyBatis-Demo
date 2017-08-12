@@ -4,7 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
+    <!--但一定要加这个，否则@ResponseBody 转换json时会报406的错误 -->
+    <mvc:annotation-driven/>    
     <context:component-scan base-package="com.springapp.mvc"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
